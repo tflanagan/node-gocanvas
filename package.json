@@ -1,6 +1,6 @@
 {
   "name": "gocanvas",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A lightweight GoCanvas SDK",
   "keywords": [
     "gocanvas",
@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
-    "cleanxml": "^1.0.0",
+    "cleanxml": "^1.0.1",
     "debug": "^2.6.4",
     "lodash.merge": "^4.6.0",
     "xml2js": "^0.4.18"
