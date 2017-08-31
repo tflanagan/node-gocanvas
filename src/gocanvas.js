@@ -158,10 +158,10 @@ class GoCanvas {
 		try {
 			body = builder.buildObject({
 				$: rootAttrs,
-				columns: {
+				Columns: {
 					c: data.columns || []
 				},
-				rows: {
+				Rows: {
 					r: (data.rows || []).map((row) => {
 						return row.map((value) => {
 							return {
