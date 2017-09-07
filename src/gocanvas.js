@@ -219,15 +219,17 @@ class GoCanvas {
 const processRequest = function(options, body){
 	return new Promise((resolve, reject) => {
 		const req = (options.port === 443 ? https : http).request(options, (response) => {
-			let xmlResponse = '';
+			const buffers = [];
 
 			response.on('data', (chunk) => {
-				xmlResponse += chunk;
+				buffers.push(chunk);
 			});
 
 			response.on('end', () => {
+				const buffer = Buffer.concat(buffers);
+
 				if(response.headers['content-type'].match(/application\/xml/)){
-					xml.parseString(xmlResponse, {
+					xml.parseString(buffer.toString('utf8'), {
 						async: true
 					}, (err, result) => {
 						if(err){
@@ -243,7 +245,7 @@ const processRequest = function(options, body){
 						resolve(result);
 					});
 				} else {
-					resolve(xmlResponse);
+					resolve(buffer);
 				}
 			});
 		});
