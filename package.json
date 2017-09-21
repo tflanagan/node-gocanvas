@@ -1,12 +1,14 @@
 {
   "name": "gocanvas",
-  "version": "1.0.3",
-  "description": "A lightweight GoCanvas SDK",
+  "version": "1.0.4",
+  "description": "A lightweight Canvas SDK",
   "keywords": [
     "gocanvas",
     "GoCanvas",
     "go-canvas",
     "Go-Canvas",
+    "canvas",
+    "Canvas",
     "SDK",
     "sdk",
     "API",
