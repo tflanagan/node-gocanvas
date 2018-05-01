@@ -176,7 +176,10 @@ class GoCanvas {
 		}
 
 		return this.request('reference_datas', {
-			method: 'POST'
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/xml'
+			}
 		}, merge({
 			username: this.settings.username,
 			password: this.settings.password
