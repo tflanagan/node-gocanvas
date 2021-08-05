@@ -231,7 +231,7 @@ const processRequest = function(options, body){
 			response.on('end', () => {
 				const buffer = Buffer.concat(buffers);
 
-				if(response.headers['content-type'].match(/application\/xml/)){
+				if(response.headers['content-type'].match(/application\/xml/) && !options.path.match('images.xml')){
 					xml.parseString(buffer.toString('utf8'), {
 						async: true
 					}, (err, result) => {
